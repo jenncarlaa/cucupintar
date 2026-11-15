@@ -1,5 +1,8 @@
 # CucuPintar — Prototype
 
+**Coba langsung di browser:** https://jenncarlaa.github.io/cucupintar/
+(otomatis diperbarui 1–2 menit setelah ada `git push` ke `main`)
+
 Prototype aplikasi pendamping digital untuk lansia: widget di layar utama, maskot Cucu di tepi layar,
 Tanya Cucu (panduan suara), SOS, baca tulisan, peringatan penipuan, pengingat obat, CucuPintar Plus,
 dan halaman pemantauan untuk keluarga.
