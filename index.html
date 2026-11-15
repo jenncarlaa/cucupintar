@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CucuPintar</title>
+<link rel="icon" href="assets/maskot-avatar.jpg">
+<link rel="stylesheet" href="css/00-dasar.css">
+<link rel="stylesheet" href="css/10-aplikasi.css">
+<link rel="stylesheet" href="css/20-onboarding-beranda.css">
+<link rel="stylesheet" href="css/30-panel-suara.css">
+</head>
+<body>
+<div class="wrap">
+<aside class="rail" id="rail" aria-label="Kendali demo">
+  <div class="brand"><img src="assets/maskot-avatar.jpg" alt=""><div><h1>CucuPintar</h1><p>Prototipe yang bisa diklik</p></div></div>
+  <div class="lab">Lompat ke alur</div>
+  <div class="jumps">
+    <button data-jump="awal"><i data-ic="play" data-s="18"></i>Mulai dari awal</button>
+    <button data-jump="home"><i data-ic="home" data-s="18"></i>Layar utama HP</button>
+    <button data-jump="tutorial"><i data-ic="help" data-s="18"></i>Tutorial cara pakai</button>
+    <button data-jump="edit"><i data-ic="grid" data-s="18"></i>Atur widget</button>
+    <button data-jump="tanya"><i data-ic="mic" data-s="18"></i>Tanya Cucu: kirim foto</button>
+    <button data-jump="scam"><i data-ic="shield" data-s="18"></i>Pesan mencurigakan</button>
+    <button data-jump="sos"><i data-ic="phone" data-s="18"></i>SOS darurat</button>
+    <button data-jump="obat"><i data-ic="pill" data-s="18"></i>Pengingat obat</button>
+    <button data-jump="baca"><i data-ic="scan" data-s="18"></i>Baca struk</button>
+    <button data-jump="bantuan"><i data-ic="users" data-s="18"></i>Minta bantuan</button>
+    <button data-jump="app"><i data-ic="gear" data-s="18"></i>Aplikasi CucuPintar</button>
+    <button data-jump="plus"><i data-ic="star" data-s="18"></i>CucuPintar Plus</button>
+    <button data-jump="family" class="fam"><i data-ic="heart" data-s="18"></i>HP keluarga (Budi)</button>
+  </div>
+  <div class="sw"><span id="plus-lab">Langganan Plus</span><button class="tg" id="rail-plus" role="switch" aria-checked="false" aria-labelledby="plus-lab"></button></div>
+  <div class="sw"><span id="snd-lab">Suara panduan</span><button class="tg on" id="snd" role="switch" aria-checked="true" aria-labelledby="snd-lab"></button></div>
+  <div class="vbox"><label class="lab" for="vsel">Suara Cucu</label><div class="vseg" role="group" aria-label="Gaya suara"><button type="button" data-vs="remaja">Cucu remaja</button><button type="button" data-vs="lembut">Dewasa lembut</button></div><div class="vrow"><select id="vsel" aria-label="Pilih suara Cucu"></select><button id="vtry" type="button">Coba</button></div><p class="hint" id="vhint"></p></div>
+  <p class="hint">Tekan maskot Cucu di tepi layar untuk membuka bantuan, atau geser ke tempat lain. Tahan lama layar utama untuk mengatur widget.</p>
+</aside>
+
+<div id="fit"><div id="phone">
+
+<!-- Onboarding 1 -->
+<section class="scr on ob obx" id="ob1">
+  <div class="ob-intro" id="ob-intro" aria-label="Pembuka CucuPintar">
+  <div class="oi-rings"><i></i><i></i><i></i></div>
+  <div class="oi-stack">
+    <div class="oi-hero">
+      <div class="oi-glow"></div>
+      <div class="oi-orbit"><span class="oi-o" style="--a:-118deg;--k:0"><span class="oi-fly"><span class="oi-ic" style="--a:-118deg;--k:0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E4572E" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span></span></span><span class="oi-o" style="--a:-72deg;--k:1"><span class="oi-fly"><span class="oi-ic" style="--a:-72deg;--k:1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B6E45" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg></span></span></span><span class="oi-o" style="--a:-26deg;--k:2"><span class="oi-fly"><span class="oi-ic" style="--a:-26deg;--k:2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B6E45" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span></span></span><span class="oi-o" style="--a:26deg;--k:3"><span class="oi-fly"><span class="oi-ic" style="--a:26deg;--k:3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></span></span><span class="oi-o" style="--a:72deg;--k:4"><span class="oi-fly"><span class="oi-ic" style="--a:72deg;--k:4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E9A23B" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg></span></span></span><span class="oi-o" style="--a:118deg;--k:5"><span class="oi-fly"><span class="oi-ic" style="--a:118deg;--k:5"><b>SOS</b></span></span></span></div>
+      <div class="oi-burst"><i style="--a:0deg;--r:170px;--c:#FFD25A;--s:10px;--k:0"></i><i style="--a:30deg;--r:140px;--c:#FFFFFF;--s:7px;--k:1"></i><i style="--a:60deg;--r:185px;--c:#F28C3A;--s:9px;--k:2"></i><i style="--a:95deg;--r:150px;--c:#FFD25A;--s:6px;--k:3"></i><i style="--a:125deg;--r:175px;--c:#FFFFFF;--s:9px;--k:4"></i><i style="--a:160deg;--r:140px;--c:#F28C3A;--s:7px;--k:5"></i><i style="--a:195deg;--r:180px;--c:#FFD25A;--s:9px;--k:6"></i><i style="--a:225deg;--r:150px;--c:#FFFFFF;--s:6px;--k:7"></i><i style="--a:255deg;--r:175px;--c:#F28C3A;--s:10px;--k:8"></i><i style="--a:290deg;--r:145px;--c:#FFD25A;--s:7px;--k:9"></i><i style="--a:320deg;--r:185px;--c:#FFFFFF;--s:8px;--k:10"></i><i style="--a:345deg;--r:150px;--c:#F28C3A;--s:6px;--k:11"></i></div>
+      <div class="oi-badge"><img src="assets/logo-maskot.webp" alt=""></div>
+    </div>
+    <div class="oi-word"><img src="assets/logo-tulisan.webp" alt="CucuPintar"></div>
+    <div class="oi-tag">Teman sabar untuk Oma dan Opa</div>
+  </div>
+</div>
+  <button class="ob-skip2" data-go="setup1">Lewati</button>
+  <div class="lay ill-w" style="left:17px;top:152px;width:396px;height:435px"><img class="flt" src="assets/onboarding-1.webp" alt=""></div>
+  <div class="ob-copy"><h1>Halo! Kenalkan, Cucu</h1><p>Teman yang sabar menemani Oma dan Opa memakai HP, kapan saja.</p></div>
+  <div class="ob-dots2"><i class="on"></i><i></i><i></i></div>
+  <button class="ob-cta" data-go="ob2"><span>Lanjut</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
+</section>
+
+<!-- Onboarding 2 -->
+<section class="scr ob obx" id="ob2">
+  
+  <button class="ob-back2" data-back><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span>Kembali</span></button><button class="ob-skip2" data-go="setup1">Lewati</button>
+  <div class="lay ill-w" style="left:25px;top:152px;width:392px;height:431px"><img class="flt" src="assets/onboarding-2.webp" alt=""></div>
+  <div class="ob-copy"><h1>Bantuan di Layar Utama</h1><p>Widget CucuPintar tampil di layar utama. Maskot Cucu selalu ada di tepi layar, di aplikasi apa pun.</p></div>
+  <div class="ob-dots2"><i></i><i class="on"></i><i></i></div>
+  <button class="ob-cta" data-go="ob3"><span>Lanjut</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
+</section>
+
+<!-- Onboarding 3 -->
+<section class="scr ob obx" id="ob3">
+  
+  <button class="ob-back2" data-back><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span>Kembali</span></button><button class="ob-skip2" data-go="setup1">Lewati</button>
+  <div class="lay ill-w" style="left:25px;top:158px;width:390px;height:413px"><img class="flt" src="assets/onboarding-3.webp" alt=""></div>
+  <div class="ob-copy"><h1>Lebih Aman dan Tenang</h1><p>Sekarang, minta keluarga mengisi data singkat untuk memasang CucuPintar.</p></div>
+  <div class="ob-dots2"><i></i><i></i><i class="on"></i></div>
+  <button class="ob-cta" data-go="setup1"><span>Lanjut</span><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
+</section>
+
+<!-- Setup 1 -->
+<section class="scr setup" id="setup1" data-step="1" data-next="setup2">
+  <div class="su-body">
+    <h2 class="su-h">Atur untuk orang tua Anda</h2>
+    <p class="su-p">Isi data orang tua yang akan memakai HP ini.</p>
+    <div class="lbl">Sapaan</div>
+    <div class="chips" id="sapaan">
+      <button class="chip sel" data-v="Oma">Oma</button><button class="chip" data-v="Opa">Opa</button><button class="chip" data-v="Eyang">Eyang</button><button class="chip" data-v="Nenek">Nenek</button><button class="chip" data-v="Kakek">Kakek</button>
+    </div>
+    <label class="fld"><span>Nama panggilan</span><input id="f-nama" value="Siti" autocomplete="off"></label>
+    <label class="fld"><span>Umur</span><input id="f-umur" value="67" inputmode="numeric" autocomplete="off"></label>
+    <label class="fld"><span>Nomor WhatsApp</span><input id="f-wa" value="+62 812 3456 7890" inputmode="tel" autocomplete="off"></label>
+  </div>
+</section>
+
+<section class="scr setup" id="setup2" data-step="2" data-next="setup3">
+  <div class="su-body">
+    <h2 class="su-h">Data pendamping</h2>
+    <p class="su-p">Isi data Anda sebagai keluarga yang dihubungi saat orang tua butuh bantuan.</p>
+    <label class="fld"><span>Nama panggilan</span><input id="f-anak" value="Budi" autocomplete="off"></label>
+    <label class="fld"><span>Hubungan</span><input id="f-hub" value="Anak" autocomplete="off"></label>
+    <label class="fld"><span>Nomor WhatsApp</span><input id="f-wa2" value="+62 876 8909 8756" inputmode="tel" autocomplete="off"></label>
+    <label class="fld"><span>Kontak cadangan</span><input id="f-cad" value="Sari (cucu)" autocomplete="off"></label>
+  </div>
+</section>
+
+<section class="scr setup" id="setup3" data-step="3" data-next="setup4">
+  <div class="su-body">
+    <h2 class="su-h">Atur tampilan</h2>
+    <p class="su-p">Atur agar mudah dibaca dan dipakai orang tua Anda.</p>
+    <label class="lbl" for="f-bahasa">Bahasa</label>
+    <div class="sel-wrap"><select id="f-bahasa"><option>Bahasa Indonesia</option><option>Bahasa Jawa</option><option>Bahasa Sunda</option></select><i data-ic="chev-d" data-s="16" data-w="2.4"></i></div>
+    <div class="sz-card">
+      <small>Ukuran teks</small>
+      <strong id="sz-demo" data-t="Contoh tulisan {sapaan}">Contoh tulisan Oma</strong>
+      <span class="aa" style="left:254px;font-size:13px">A</span>
+      <input type="range" id="f-size" min="18" max="26" step="1" value="22" aria-label="Ukuran teks">
+      <span class="aa" style="left:356px;font-size:22px">A</span>
+    </div>
+    <div class="lbl">Suara Cucu</div>
+    <div class="chips" id="voice-pick"><button class="chip sel" data-v="f">Perempuan</button><button class="chip" data-v="m">Laki-laki</button></div>
+    <div class="group">
+      <div class="trow"><div class="tx"><b>Kontras tinggi</b><small>Teks lebih tebal dan jelas</small></div><button class="tg on" role="switch" aria-checked="true" aria-label="Kontras tinggi"></button></div>
+      <div class="trow"><div class="tx"><b>Bicara pelan</b><small>Cucu berbicara lebih lambat</small></div><button class="tg" role="switch" aria-checked="false" aria-label="Bicara pelan"></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="scr setup" id="setup4" data-step="4" data-next="ready">
+  <div class="su-body">
+    <h2 class="su-h">Atur izin</h2>
+    <p class="su-p">Izinkan agar CucuPintar bisa muncul di layar dan membantu.</p>
+    <div class="group">
+      <div class="trow"><div class="tx"><b>Tampil di atas aplikasi lain</b><small>Untuk maskot Cucu di tepi layar</small></div><button class="tg on" role="switch" aria-checked="true" aria-label="Tampil di atas aplikasi lain"></button></div>
+      <div class="trow"><div class="tx"><b>Cek pesan mencurigakan</b><small>Memeriksa pesan yang masuk</small></div><button class="tg on" role="switch" aria-checked="true" aria-label="Cek pesan mencurigakan"></button></div>
+      <div class="trow"><div class="tx"><b>Mikrofon dan kamera</b><small>Untuk bertanya dan membaca tulisan</small></div><button class="tg on" role="switch" aria-checked="true" aria-label="Mikrofon dan kamera"></button></div>
+      <div class="trow"><div class="tx"><b>Notifikasi</b><small>Untuk pengingat minum obat</small></div><button class="tg on" role="switch" aria-checked="true" aria-label="Notifikasi"></button></div>
+      <div class="trow"><div class="tx"><b>Lokasi</b><small>Dikirim hanya saat SOS</small></div><button class="tg on" role="switch" aria-checked="true" aria-label="Lokasi"></button></div>
+    </div>
+  </div>
+</section>
+
+<section class="scr" id="ready">
+  <div class="center-ic gl g-brand pop" style="top:170px"><i data-ic="check" data-s="40" data-w="2.6"></i></div>
+  <h2 class="big-h" style="top:282px">Semua sudah siap</h2>
+  <p class="big-p" style="top:330px" data-t="Widget CucuPintar sudah dipasang di layar utama. Sekarang serahkan HP ini ke {sapaan} {nama}.">Widget CucuPintar sudah dipasang di layar utama. Sekarang serahkan HP ini ke Oma Siti.</p>
+  <div class="ticks" style="top:450px">
+    <div><i data-ic="check" data-s="22" data-w="2.6"></i>Widget di layar utama</div>
+    <div><i data-ic="check" data-s="22" data-w="2.6"></i>Maskot Cucu di tepi layar</div>
+    <div><i data-ic="check" data-s="22" data-w="2.6"></i><span data-t="Kontak darurat: {anak}">Kontak darurat: Budi</span></div>
+  </div>
+  <button class="btn dark su-next" data-go="home" data-fresh data-t="Serahkan ke {sapaan}">Serahkan ke Oma</button>
+</section>
+
+<!-- Layar utama HP -->
+<section class="scr" id="home" data-nav="1" data-status="light">
+  <div class="edbar"><button id="ed-add"><i data-ic="plus" data-s="20" data-w="2.6"></i>Tambah</button><button id="ed-done">Selesai</button></div>
+  <div id="hs"></div>
+  <div class="dots"><i class="on"></i><i></i></div>
+  <div class="dock">
+    <button class="app" id="app-phone" data-go="phone-list" aria-label="Telepon"><span class="ai gl i-phone"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span></button>
+    <button class="app" id="app-pesan" data-go="inbox" aria-label="Pesan"><span class="ai gl i-msg"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span></button>
+    <button class="app" id="app-cam" data-go="camera" aria-label="Kamera"><span class="ai gl i-cam"><i data-ic="camera" data-s="36" data-w="2"></i></span></button>
+    <button class="app fake" aria-label="Internet"><span class="ai gl i-web"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88z"/></svg></span></button>
+  </div>
+</section>
+
+<!-- Pesan -->
+<section class="scr" id="inbox" data-nav="1">
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Kembali</button>
+  <h2 class="bigtitle">Pesan</h2>
+  <div class="list stag">
+    <button class="lrow" id="row-budi" data-chat="budi"><span class="av">B<i class="dot"></i></span><span class="tx"><b data-t="{anak}">Budi</b><small data-t="{sapaan}, ini foto kebun kemarin.">Oma, ini foto kebun kemarin.</small></span><span class="meta">09.12<i class="badge">2</i></span></button>
+    <button class="lrow" id="row-scam" data-chat="scam"><span class="av gray">?</span><span class="tx"><b>+62 857 2210 7745</b><small>Undangan.apk</small></span><span class="meta" id="scam-meta"></span></button>
+    <button class="lrow" id="row-sari" data-chat="sari"><span class="av sand">S</span><span class="tx"><b>Sari</b><small data-t="{sapaan}, minggu depan Sari main ya.">Oma, minggu depan Sari main ya.</small></span><span class="meta">Kemarin</span></button>
+  </div>
+</section>
+
+<section class="scr" id="chat" data-nav="1">
+  <div class="chead"></div>
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Pesan</button>
+  <span class="av" id="c-av">B<i class="dot"></i></span>
+  <div id="c-nm">Budi</div>
+  <div class="c-body" id="c-body"></div>
+  <div class="cbar">
+    <button id="btn-clip" aria-label="Lampirkan foto"><i data-ic="plus" data-s="26" data-w="2.2"></i></button>
+    <div class="c-input">
+      <input id="chat-input" placeholder="Tulis pesan" aria-label="Tulis pesan" autocomplete="off">
+      <div class="c-att" id="c-att" hidden><img id="c-att-img" alt="">1 foto siap dikirim</div>
+      <button id="btn-send" aria-label="Kirim"><i data-ic="up" data-s="22" data-w="2.6"></i></button>
+    </div>
+  </div>
+</section>
+
+<section class="scr" id="phone-list" data-nav="1">
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Kembali</button>
+  <h2 class="bigtitle">Telepon</h2>
+  <div class="list stag">
+    <button class="lrow" id="ct-budi" data-call="Budi"><span class="av">B</span><span class="tx"><b data-t="{anak}">Budi</b><small data-t="{hubB}">Anak</small></span><span class="callbtn"><i data-ic="phone-f" data-s="24" data-w="0"></i></span></button>
+    <button class="lrow" data-call="Sari" data-av="sand"><span class="av sand">S</span><span class="tx"><b>Sari</b><small>Cucu</small></span><span class="callbtn"><i data-ic="phone-f" data-s="24" data-w="0"></i></span></button>
+    <button class="lrow" data-call="Bu Ratna" data-av="sky"><span class="av sky">R</span><span class="tx"><b>Bu Ratna</b><small>Tetangga</small></span><span class="callbtn"><i data-ic="phone-f" data-s="24" data-w="0"></i></span></button>
+  </div>
+</section>
+
+<section class="scr" id="call">
+  <span class="av cl-av" id="cl-av">B</span>
+  <h2 class="cl-h" id="cl-h">Memanggil Budi…</h2>
+  <div class="cl-s" id="cl-s">Berdering</div>
+  <button class="btn danger" id="call-end" aria-label="Tutup telepon"><i data-ic="phone-f" data-s="40" data-w="0"></i></button>
+  <div class="cl-el">Tutup telepon</div>
+</section>
+
+<!-- Kamera / pindai -->
+<section class="scr live" id="camera" data-status="light" data-nav="1">
+  <div class="vf">
+    <img class="photo" id="vf-photo" src="assets/struk-foto.jpg" alt="Struk belanja di tangan">
+    <div class="det" id="det"><div class="fill"></div><i></i><i></i><i></i><i></i></div>
+    <div class="scanline"></div>
+    <div id="tboxes"></div>
+  </div>
+  <div class="cam-top"></div>
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Kembali</button>
+  <div id="cam-quota">Sisa 3 kali</div>
+  <div class="cam-hint" id="cam-hint">Arahkan kamera ke tulisan</div>
+  <div class="scan-sheet"><b><span id="scan-lab">Membaca tulisan…</span><span id="scan-pct">0%</span></b><div class="bar"><i id="scan-bar"></i></div></div>
+  <div class="cam-bot">
+    <button id="cam-gal" aria-label="Pilih dari galeri"><img src="assets/struk-potong.jpg" alt="">Galeri</button>
+    <button id="shutter" aria-label="Ambil foto"></button>
+    <div class="cam-l">Foto tulisan</div>
+  </div>
+  <div class="flash" id="flash"></div>
+</section>
+
+<section class="scr" id="reader">
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Kembali</button>
+  <div class="navtitle">Baca tulisan</div>
+  <div class="rd-head"><img src="assets/struk-potong.jpg" alt="Struk belanja"><div class="tx"><b>Struk belanja</b><small>Unggul Mart Antasari<br>31 Oktober 2024, 19.47</small><strong>Rp37.000</strong><em>Total, 4 barang</em></div></div>
+  <div class="rd-card">
+    <div class="rd-top"><div class="reading live" id="rd-state"><span class="ic"><i data-ic="volume" data-s="22"></i></span><span id="rd-lab">Sedang dibacakan</span></div><span class="rd-q" id="rd-q"></span></div>
+    <div class="rd-txt" id="rd-txt"></div>
+    <div class="rd-bar"><i id="rd-fill"></i></div>
+    <div class="rd-n" id="rd-n">Kalimat 1 dari 3</div>
+  </div>
+  <div class="ctls">
+    <button class="ctl" id="rd-again"><i><span data-ic="replay" data-s="22" data-w="2.2"></span></i>Ulangi</button>
+    <button class="ctl main" id="rd-pause"><i><span data-ic="pause" data-s="22" data-w="2.4"></span></i><span>Jeda</span></button>
+    <button class="ctl" id="rd-slow"><i><span data-ic="gauge" data-s="22" data-w="2.2"></span></i>Lebih pelan</button>
+  </div>
+</section>
+
+<section class="scr" id="alarm">
+  <div class="al-ey">Pengingat CucuPintar</div>
+  <div class="al-ic gl g-brand"><i data-ic="pill" data-s="48" data-w="2"></i></div>
+  <div class="al-t" id="al-t">13.00</div>
+  <h2 class="al-h" data-t="Waktunya minum obat, {sapaan}">Waktunya minum obat, Oma</h2>
+  <div class="al-card">
+    <div><i data-ic="pill" data-s="22" data-w="2.2"></i><span id="al-n">Obat gula, 1 tablet</span></div>
+    <div><i data-ic="clock" data-s="22" data-w="2.2"></i><span id="al-m">Diminum sebelum makan</span></div>
+  </div>
+  <button class="btn primary" id="al-done"><i data-ic="check" data-s="22" data-w="2.6"></i>Sudah diminum</button>
+  <button class="btn light" id="al-later">Ingatkan 10 menit lagi</button>
+</section>
+
+<!-- SOS -->
+<section class="scr" id="soshold" data-status="light">
+  <div class="sos-t">SOS CucuPintar</div>
+  <div class="sos-ring"><svg viewBox="0 0 246 246" width="246" height="246"><circle id="sos-arc" cx="123" cy="123" r="119"></circle></svg></div>
+  <div class="sos-disk"><div><b id="sos-num">3</b><span>detik</span></div></div>
+  <h2 class="sos-h">Tahan 3 detik</h2>
+  <p class="sos-p">Jangan lepas sampai lingkaran penuh</p>
+  <button id="sos-keep" data-hold>Tahan di sini</button>
+  <button class="btn" id="sos-back" data-back>Kembali</button>
+</section>
+
+<section class="scr" id="sosactive" data-status="light">
+  <div class="call-ic"><i data-ic="phone-f" data-s="38" data-w="0"></i></div>
+  <h2 class="sa-h" data-t="Menelepon {anak}">Menelepon Budi</h2>
+  <div class="sa-t" id="sos-timer">Berdering…</div>
+  <div class="sa-info"><i><span data-ic="check" data-s="22" data-w="2.6"></span></i><div><b data-t="Lokasi {sapaan} sudah dikirim">Lokasi Oma sudah dikirim</b><small data-t="{anak} bisa melihat lokasi sekarang">Budi bisa melihat lokasi sekarang</small></div></div>
+  <div class="map">
+    <svg class="roads" viewBox="0 0 392 226" width="392" height="226" fill="none">
+      <g stroke="#C3CBBE" stroke-width="20"><path d="M-10 141 404 13"></path><path d="M70 -12 242 240"></path><path d="M232 -10 404 144"></path></g>
+      <g stroke="#FDFEFB" stroke-width="16"><path d="M-10 141 404 13"></path><path d="M70 -12 242 240"></path><path d="M232 -10 404 144"></path></g>
+    </svg>
+    <div class="pin-pulse"></div>
+    <svg class="pin" viewBox="0 0 58 70" width="58" height="70"><path d="M29 3C14.6 3 3 14.3 3 28.3c0 10.4 6.3 17.6 13.4 24.5L26 62.3c1.7 1.7 4.3 1.7 6 0l9.6-9.5C48.7 45.9 55 38.7 55 28.3 55 14.3 43.4 3 29 3z" fill="#D0302B" stroke="#fff" stroke-width="5" stroke-linejoin="round"></path><text x="29" y="32" text-anchor="middle" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#fff" class="pin-t">Oma</text></svg>
+    <div class="addr"><b>Lokasi saat ini</b><small>Jl. Kebon Jeruk IV No. 1, Jakarta</small></div>
+  </div>
+  <button class="btn" id="sos-cancel">Batalkan panggilan</button>
+</section>
+
+<section class="scr" id="sosmiss">
+  <div class="sm-ic gl g-red"><i data-ic="phone-x" data-s="34" data-w="2.2"></i></div>
+  <h2 class="sm-h" data-t="{anak} belum mengangkat">Budi belum mengangkat</h2>
+  <p class="sm-p" data-t="Tenang, {sapaan}. Kirim pesan supaya {anak} dan Sari cepat tahu.">Tenang, Oma. Kirim pesan supaya Budi dan Sari cepat tahu.</p>
+  <div class="sm-lab">Pilih pesan cepat</div>
+  <div class="qmsg" id="qmsg">
+    <button data-q="Saya jatuh, tolong segera datang."><i data-ic="alert" data-s="22" data-w="2.2"></i>Saya jatuh, tolong segera datang</button>
+    <button data-q="Saya merasa tidak enak badan."><i data-ic="heart" data-s="22" data-w="2.2"></i>Saya merasa tidak enak badan</button>
+    <button data-q="Saya tersesat, tolong jemput saya."><i data-ic="pin" data-s="22" data-w="2.2"></i>Saya tersesat, tolong jemput</button>
+    <button data-q="Tolong telepon saya sekarang."><i data-ic="phone" data-s="22" data-w="2.2"></i>Tolong telepon saya sekarang</button>
+  </div>
+  <button class="vn" id="vn" aria-label="Tahan untuk merekam pesan suara"><span class="vt">Tahan untuk rekam suara</span><span class="wave"><i style="--h:18px;--d:0s"></i><i style="--h:30px;--d:.1s"></i><i style="--h:14px;--d:.2s"></i><i style="--h:34px;--d:.3s"></i><i style="--h:20px;--d:.4s"></i><i style="--h:28px;--d:.5s"></i><i style="--h:12px;--d:.6s"></i><i style="--h:26px;--d:.7s"></i></span><span id="vn-t" hidden>0:00</span><span class="mic"><i data-ic="mic" data-s="30" data-w="2.2"></i></span></button>
+  <div class="sm-row"><button class="btn light" id="sm-again"><i data-ic="phone" data-s="20" data-w="2.2"></i>Telepon lagi</button><button class="btn light" id="sm-close">Tutup</button></div>
+  <div class="sm-112">Keadaan gawat? Hubungi <b>112</b></div>
+</section>
+
+<section class="scr" id="sossent">
+  <div class="center-ic gl pop" style="top:140px"><i data-ic="check" data-s="40" data-w="2.6"></i></div>
+  <h2 class="big-h" style="top:252px">Pesan darurat terkirim</h2>
+  <p class="big-p" style="top:298px" data-t="Ke {anak} dan Sari, beserta lokasi {sapaan}.">Ke Budi dan Sari, beserta lokasi Oma.</p>
+  <div class="ss-msg"><small id="ss-kind">Pesan cepat</small><span id="ss-text">Saya jatuh, tolong segera datang.</span></div>
+  <div id="ss-reply"></div>
+  <button class="btn dark su-next" id="ss-home">Kembali ke layar utama</button>
+</section>
+
+<!-- Aplikasi CucuPintar -->
+<section class="scr" id="app" data-nav="1">
+  <div class="scroll" id="app-scroll">
+    <div class="prof"><span class="av"><img src="assets/maskot-avatar.jpg" alt=""></span><div><b data-t="{sapaan} {nama}">Oma Siti</b><small data-t="Didampingi {anak} ({hub})">Didampingi Budi (anak)</small></div></div>
+    <div class="plan" id="ap-plan">
+      <div class="pt"><span id="ap-plan-t">Paket Gratis</span><span class="plus-tag" id="ap-plan-tag" hidden>PLUS</span></div>
+      <small id="ap-plan-s">Baca tulisan 3 kali sehari.</small>
+      <button class="btn" id="ap-plan-btn" data-go="plus">Coba Plus gratis 7 hari</button>
+    </div>
+    <div class="gh">Pengingat</div>
+    <div class="gcard" id="ap-rem"></div>
+    <div class="gh">Layar utama</div>
+    <div class="gcard">
+      <button class="grow" id="ap-edit"><span class="sq gl g-brand"><i data-ic="grid" data-s="20" data-w="2.2"></i></span><span class="tx"><b>Atur widget</b><small>Tambah, hapus, atau ganti widget</small></span><i data-ic="chev-r" data-s="20" data-w="2.4" class="chev"></i></button>
+    </div>
+    <div class="gh">Keluarga</div>
+    <div class="gcard">
+      <div class="grow"><span class="av" style="width:38px;height:38px;font-size:15px">B</span><span class="tx"><b data-t="{anak}">Budi</b><small data-t="{hubB} · kontak darurat utama">Anak · kontak darurat utama</small></span></div>
+      <div class="grow"><span class="av sand" style="width:38px;height:38px;font-size:15px">S</span><span class="tx"><b>Sari</b><small>Cucu · kontak cadangan</small></span></div>
+    </div>
+    <div class="gh">Tampilan dan suara</div>
+    <div class="gcard">
+      <div class="grow"><span class="sq gl g-gray"><i data-ic="text" data-s="20" data-w="2.2"></i></span><span class="tx"><b>Ukuran teks</b></span><span class="val">Besar</span></div>
+      <div class="grow"><span class="sq gl g-gray"><i data-ic="volume" data-s="20" data-w="2.2"></i></span><span class="tx"><b>Suara panduan</b></span><button class="tg on" id="ap-snd" role="switch" aria-checked="true" aria-label="Suara panduan"></button></div>
+    </div>
+    <div class="gh">Bantuan</div>
+    <div class="gcard">
+      <button class="grow" id="ap-tour"><span class="sq gl g-brand"><i data-ic="help" data-s="20" data-w="2.2"></i></span><span class="tx"><b>Lihat cara pakai</b></span><i data-ic="chev-r" data-s="20" data-w="2.4" class="chev"></i></button>
+    </div>
+  </div>
+  <div class="fade-head"></div>
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Kembali</button>
+  <h2 class="bigtitle" style="top:108px">CucuPintar</h2>
+</section>
+
+<!-- Edit pengingat -->
+<section class="scr" id="remedit">
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Batal</button>
+  <div class="navtitle" id="re-title">Ubah pengingat</div>
+  <div class="re-body">
+    <div class="re-kind" id="re-kind"><button class="chip" data-k="obat">Obat</button><button class="chip" data-k="dokter">Kontrol dokter</button></div>
+    <label class="fld"><span id="re-name-l">Nama obat</span><input id="re-name" autocomplete="off"></label>
+    <div class="lbl">Jam</div>
+    <div class="re-time" style="margin-top:-10px"><button id="re-minus" aria-label="Kurangi 30 menit"><i data-ic="minus" data-s="24" data-w="2.6"></i></button><output id="re-time">13.00</output><button id="re-plus" aria-label="Tambah 30 menit"><i data-ic="plus" data-s="24" data-w="2.6"></i></button></div>
+    <div id="re-obat">
+      <div class="lbl" style="margin-bottom:10px">Jumlah</div>
+      <div class="chips" id="re-dose"><button class="chip" data-v="1 tablet">1 tablet</button><button class="chip" data-v="2 tablet">2 tablet</button><button class="chip" data-v="1 sendok">1 sendok</button></div>
+      <div class="lbl" style="margin:20px 0 10px">Diminum</div>
+      <div class="chips" id="re-meal"><button class="chip" data-v="Sebelum makan">Sebelum makan</button><button class="chip" data-v="Sesudah makan">Sesudah makan</button></div>
+    </div>
+    <div>
+      <div class="lbl" style="margin-bottom:10px">Ulangi</div>
+      <div class="chips" id="re-rep"><button class="chip" data-v="Setiap hari">Setiap hari</button><button class="chip" data-v="Senin–Jumat">Senin–Jumat</button><button class="chip" data-v="Sekali saja">Sekali saja</button></div>
+    </div>
+    <button class="re-del" id="re-del">Hapus pengingat</button>
+  </div>
+  <button class="btn primary" id="re-save">Simpan</button>
+</section>
+
+<!-- Plus -->
+<section class="scr" id="plus">
+  <button class="px" data-back aria-label="Tutup"><i data-ic="x" data-s="24" data-w="2.4"></i></button>
+  <div class="p-wrap">
+    <div class="p-mark"><img src="assets/maskot-avatar.jpg" alt=""></div>
+    <h1>CucuPintar Plus</h1>
+    <p class="sub" data-t="Perlindungan lebih lengkap untuk {sapaan}, dibayar oleh keluarga.">Perlindungan lebih lengkap untuk Oma, dibayar oleh keluarga.</p>
+    <div class="ben">
+      <div><span class="ic-c gl g-red"><i data-ic="shield" data-s="20" data-w="2.2"></i></span><span><b>Penjelasan lengkap pesan mencurigakan</b><small>Alasan pesan berbahaya dan apa yang harus dilakukan</small></span></div>
+      <div><span class="ic-c gl g-orange"><i data-ic="scan" data-s="20" data-w="2.2"></i></span><span><b>Baca tulisan tanpa batas</b><small>Paket gratis 3 kali sehari</small></span></div>
+      <div><span class="ic-c gl g-blue"><i data-ic="calendar" data-s="20" data-w="2.2"></i></span><span><b>Pengingat obat dan jadwal dokter</b><small>Tanpa batas, diatur dari HP keluarga</small></span></div>
+      <div><span class="ic-c gl g-brand"><i data-ic="users" data-s="20" data-w="2.2"></i></span><span><b>Laporan untuk keluarga</b><small>Obat yang diminum dan pesan yang diblokir</small></span></div>
+    </div>
+    <div class="plans" id="plans">
+      <button class="pl" data-plan="m"><b>Bulanan</b><strong>Rp19.000</strong><small>per bulan</small></button>
+      <button class="pl sel" data-plan="y"><span class="save">Hemat 2 bulan</span><b>Tahunan</b><strong>Rp190.000</strong><small>per tahun</small></button>
+    </div>
+    <button class="btn primary p-cta" id="p-cta">Coba gratis 7 hari</button>
+    <p class="p-fine">Dibayar lewat Google Play. Bisa berhenti kapan saja sebelum masa coba habis.</p>
+  </div>
+</section>
+
+<!-- HP keluarga -->
+<section class="scr" id="family">
+  <div class="scroll" id="fm-scroll">
+    <h2 class="fm-hi" data-t="Halo, {anak}">Halo, Budi</h2>
+    <p class="fm-sub" data-t="Memantau {sapaan} {nama}">Memantau Oma Siti</p>
+    <div class="fm-oma">
+      <div class="top"><span class="av"><img src="assets/maskot-avatar.jpg" alt=""></span><div><b data-t="{sapaan} {nama}">Oma Siti</b><small><i></i>Aktif 2 menit lalu</small></div></div>
+      <div class="fm-chips"><span class="chipline gray sm"><i data-ic="battery" data-s="16" data-w="2.2"></i>Baterai 64%</span><span class="chipline gray sm"><i data-ic="pin" data-s="16" data-w="2.2"></i>Di rumah</span><span class="chipline brand sm" id="fm-plan">Gratis</span></div>
+      <div class="fm-acts"><button id="fm-call"><i data-ic="phone" data-s="24" data-w="2.2"></i>Telepon</button><button id="fm-msg"><i data-ic="msg" data-s="24" data-w="2.2"></i>Pesan</button><button id="fm-loc"><i data-ic="pin" data-s="24" data-w="2.2"></i>Lokasi</button></div>
+    </div>
+    <div id="fm-alerts"></div>
+    <div class="gh">Obat hari ini <button id="fm-edit-rem">Atur</button></div>
+    <div class="gcard" id="fm-rem"></div>
+    <div class="gh">Keamanan</div>
+    <div class="gcard" id="fm-sec"></div>
+    <div class="gh">Aktivitas hari ini</div>
+    <div class="gcard"><div class="tl" id="fm-log"></div></div>
+  </div>
+  <div class="fade-head" style="height:110px"></div>
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>HP Oma</button>
+</section>
+
+<!-- Bantuan terkirim -->
+<section class="scr" id="helpsent">
+  <div class="center-ic gl g-brand" style="top:150px"><i data-ic="check" data-s="40" data-w="2.6"></i></div>
+  <h2 class="big-h" style="top:262px" data-t="Terkirim ke {anak}">Terkirim ke Budi</h2>
+  <p class="big-p" style="top:310px" data-t="{sapaan} tunggu sebentar ya. Tidak perlu menekan apa pun.">Oma tunggu sebentar ya. Tidak perlu menekan apa pun.</p>
+  <div id="reply-slot"></div>
+  <button class="btn dark su-next" id="help-done">Kembali</button>
+</section>
+
+<!-- Minta bantuan (selalu layar terakhir) -->
+<section class="scr" id="help">
+  <button class="back" data-back><i data-ic="chev-l" data-s="26" data-w="2.4"></i>Kembali</button>
+  <div class="navtitle">Minta bantuan</div>
+  <div class="hp-card">
+    <div class="thumb" id="thumb"><div class="shot"><i data-ic="camera" data-s="16" data-w="2.2"></i>Foto layar</div></div>
+    <h2 class="hp-h" data-t="Kirim layar ini ke {anak} lewat WhatsApp?">Kirim layar ini ke Budi lewat WhatsApp?</h2>
+    <p class="hp-p" data-t="{anak} akan melihat layar {sapaan} dan membantu dari jauh.">Budi akan melihat layar Oma dan membantu dari jauh.</p>
+    <span class="chipline brand"><i data-ic="shield" data-s="18" data-w="2.2"></i><span data-t="Hanya {anak} yang bisa melihat">Hanya Budi yang bisa melihat</span></span>
+    <button class="btn primary" id="help-send"><i data-ic="send" data-s="22" data-w="2.2"></i>Kirim</button>
+  </div>
+</section>
+
+<!-- lapisan global -->
+<div id="at" class="off"><button id="at-btn" aria-label="Buka bantuan CucuPintar" aria-expanded="false"><img src="assets/maskot-avatar.jpg" alt=""></button></div>
+<div id="pn-dim"></div>
+<div id="panel" role="dialog" aria-label="Bantuan CucuPintar">
+  <div class="pn-head"><img src="assets/maskot-avatar.jpg" alt=""><h2 data-t="Mau dibantu apa, {sapaan}?">Mau dibantu apa, Oma?</h2><button class="xbtn" id="pn-close" aria-label="Tutup"><i data-ic="x" data-s="24" data-w="2.4"></i></button></div>
+  <div class="pn-grid">
+    <button class="tile" id="t-ask"><span class="ic-c gl g-brand"><i data-ic="mic" data-s="24" data-w="2.2"></i></span><b>Tanya Cucu</b><small>Tekan lalu bicara</small></button>
+    <button class="tile" id="t-sos" data-hold aria-label="SOS, tahan 3 detik"><span class="ic-c gl g-red">SOS</span><b>Darurat</b><small>Tahan 3 detik</small></button>
+    <button class="tile" id="t-read"><span class="ic-c gl g-orange"><i data-ic="scan" data-s="24" data-w="2.2"></i></span><b>Baca tulisan</b><small id="t-read-s">Sisa 3 kali hari ini</small></button>
+    <button class="tile" id="t-help"><span class="ic-c gl g-blue"><i data-ic="users" data-s="24" data-w="2.2"></i></span><b>Minta bantuan</b><small data-t="Kirim layar ke {anak}">Kirim layar ke Budi</small></button>
+    <button class="tile" id="t-rem"><span class="ic-c gl g-purple"><i data-ic="pill" data-s="24" data-w="2.2"></i></span><b>Pengingat</b><small id="t-rem-s">Obat gula, 13.00</small></button>
+    <button class="tile" id="t-home"><span class="ic-c gl g-gray"><i data-ic="home" data-s="24" data-w="2.2"></i></span><b>Layar utama</b><small>Kembali ke awal</small></button>
+  </div>
+  <button class="pn-app" id="pn-app"><i data-ic="gear" data-s="22" data-w="2.1"></i><span>Pengaturan CucuPintar</span><i data-ic="chev-r" data-s="20" data-w="2.4"></i></button>
+</div>
+
+<div class="dim" id="ov-dim"></div>
+
+<div class="sheet" id="listen" role="dialog" aria-label="Cucu mendengarkan">
+  <div class="mic-wrap"><i class="r1"></i><i class="r2"></i><div class="core"><img src="assets/maskot-avatar.jpg" alt=""></div></div>
+  <div class="wave"><i style="--h:22px;--d:0s"></i><i style="--h:8px;--d:.1s"></i><i style="--h:24px;--d:.2s"></i><i style="--h:13px;--d:.3s"></i><i style="--h:32px;--d:.4s"></i><i style="--h:9px;--d:.5s"></i><i style="--h:24px;--d:.6s"></i><i style="--h:13px;--d:.7s"></i><i style="--h:8px;--d:.8s"></i></div>
+  <h2 class="l-title" id="l-title">Cucu mendengarkan…</h2>
+  <div class="l-quote"><div id="l-quote"></div></div>
+  <button class="btn light" id="l-cancel">Batal</button>
+</div>
+
+<div class="sheet" id="picker" role="dialog" aria-label="Pilih foto">
+  <h2 class="sh-h" id="pk-h">Pilih foto</h2>
+  <p class="sh-p" id="pk-p">Tekan foto yang mau dikirim</p>
+  <div class="pk-grid" id="pk-grid">
+    <button id="pick-0" data-pick="gal_oma" aria-label="Foto Oma"><img src="assets/galeri-oma.jpg" alt=""></button>
+    <button data-pick="garden" aria-label="Foto kebun"><img src="assets/galeri-kebun.jpg" alt=""></button>
+    <button data-pick="receipt" id="pick-rc" aria-label="Foto struk belanja"><img src="assets/struk-potong.jpg" alt=""><span class="tagt">Struk</span></button>
+    <button data-pick="gal_pot" aria-label="Foto pot tanaman"><img src="assets/galeri-pot.jpg" alt=""></button>
+  </div>
+  <button class="btn light" id="pk-cancel">Batal</button>
+</div>
+
+<div class="sheet" id="cfs" role="dialog" aria-label="Konfirmasi sebelum kirim">
+  <div class="reading live"><span class="ic"><i data-ic="volume" data-s="22"></i></span>Sedang dibacakan</div>
+  <h2 class="sh-h" style="margin-top:14px" data-t="{sapaan} mau kirim foto ini">Oma mau kirim foto ini</h2>
+  <img class="cf-img" id="cf-img" alt="Foto yang akan dikirim">
+  <div class="cf-to">ke <b id="cf-to">Budi</b>, sudah betul?</div>
+  <button class="btn primary" id="cf-yes"><i data-ic="check" data-s="22" data-w="2.6"></i>Ya, kirim</button>
+  <button class="btn light" id="cf-no">Bukan, batalkan</button>
+</div>
+
+<div class="sheet" id="lock" role="dialog" aria-label="Jatah baca habis">
+  <span class="ic-c gl g-orange" style="width:64px;height:64px"><i data-ic="scan" data-s="28" data-w="2.1"></i></span>
+  <h2 class="sh-h" style="margin-top:18px">Jatah baca hari ini habis</h2>
+  <p class="sh-p">Paket gratis bisa membaca 3 tulisan sehari. Besok bisa dipakai lagi, atau minta keluarga mengaktifkan Plus.</p>
+  <button class="btn dark" id="lock-plus">Lihat CucuPintar Plus</button>
+  <button class="btn light" id="lock-later">Nanti saja</button>
+</div>
+
+<div class="sheet" id="wgal" role="dialog" aria-label="Tambah widget">
+  <h2 class="sh-h">Tambah widget</h2>
+  <div class="wg-list" id="wg-list"></div>
+  <button class="btn light" id="wg-close">Tutup</button>
+</div>
+
+<div class="modal-wrap"><div id="scam" role="alertdialog" aria-label="Peringatan penipuan">
+  <div class="shield gl g-red"><i data-ic="shield" data-s="40" data-w="2.1"></i></div>
+  <h2 data-t="Hati-hati, {sapaan}">Hati-hati, Oma</h2>
+  <p class="lead">Pesan ini mencurigakan. Jangan dibuka ya.</p>
+  <div class="sc-card">
+    <div class="sc-row"><i data-ic="file" data-s="20" data-w="2.2"></i><span><b>Undangan.apk</b> adalah berkas aplikasi, bukan undangan.</span></div>
+    <div class="sc-row"><i data-ic="user-x" data-s="20" data-w="2.2"></i><span>Nomor ini tidak ada di kontak.</span></div>
+  </div>
+  <div class="sc-more" id="sc-more" hidden>
+    <h3>Penjelasan lengkap <span class="plus-tag">PLUS</span></h3>
+    <p>Kalau berkas .apk dipasang, penipu bisa membaca SMS di HP, termasuk kode OTP dari bank, lalu menguras rekening.</p>
+    <p>Pesan berkedok undangan pernikahan adalah modus penipuan yang sering dilaporkan.</p>
+    <p data-t="Yang sebaiknya dilakukan: jangan buka berkasnya, tutup pesan ini, lalu beri tahu {anak}.">Yang sebaiknya dilakukan: jangan buka berkasnya, tutup pesan ini, lalu beri tahu Budi.</p>
+  </div>
+  <button class="sc-lock" id="sc-lock"><i data-ic="lock" data-s="20" data-w="2.2"></i><span>Lihat penjelasan lengkap</span><span class="plus-tag">PLUS</span></button>
+  <button class="btn danger" id="scam-close">Tutup pesan</button>
+  <button class="btn light" id="scam-ask" data-t="Tanya {anak}">Tanya Budi</button>
+</div></div>
+
+<div id="guide" aria-live="polite">
+  <div class="g-hole none" id="g-hole"></div>
+  <div class="g-block" id="g-block"></div>
+  <svg class="g-arrow" id="g-arrow" width="440" height="956" viewBox="0 0 440 956" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><g><path id="g-line" d=""></path><path id="g-headp" d=""></path></g></svg>
+  <div class="g-label" id="g-label">Tekan di sini</div>
+  <div class="g-card" id="g-card"></div>
+</div>
+
+<div id="toast" role="status"></div>
+<div id="homebar" role="button" aria-label="Ke layar utama" tabindex="0"></div>
+
+</div></div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
