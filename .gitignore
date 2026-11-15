@@ -7,3 +7,4 @@ node_modules/
 .idea/
 # Pengaturan lokal Claude Code (pribadi tiap orang)
 .claude/settings.local.json
+.claude/launch.json
